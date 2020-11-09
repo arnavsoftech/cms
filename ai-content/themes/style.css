@@ -203,7 +203,7 @@ a:hover, a:active {
 .nav-bar {
     border-bottom: solid 1px #EEE;
     box-shadow: 2px 2px 2px #EEE;
-    background-color: #f7f7f7;
+    background-color: #fff;
 }
 
 .site-navigation ul {
@@ -501,7 +501,7 @@ a:hover, a:active {
 .btn {
     padding: 18px 40px;
     border: 2px solid #262626;
-    border-radius: 24px;
+    border-radius: 30px;
     font-size: 14px;
     font-weight: 600;
     line-height: 1;

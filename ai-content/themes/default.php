@@ -9,6 +9,7 @@
     <meta name="description" value="<?= $meta_description; ?>" />
     <meta name="keywords" value="<?= $meta_keywords; ?>" />
     <script type='text/javascript' src='<?= theme_url(); ?>js/jquery.js'></script>
+    <script type='text/javascript' src='<?= theme_url(); ?>js/bootstrap.min.js'></script>
     <link rel="stylesheet" href="<?= theme_url(); ?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= theme_url(); ?>css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= theme_url(); ?>css/elegant-fonts.css">

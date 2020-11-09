@@ -310,7 +310,48 @@ $cat = $this->db->get_where('categories', array('id' => $cat_id))->row();
                 </div>
             </div>
             <div class="col-12 col-lg-6">
-                <?= $page->help_details; ?>
+                <?php // $page->help_details;
+                ?>
+                <?php
+                $where = array(
+                    'post_type' => 'post',
+                    'parent_id' => 15,
+                    'status' => 1
+                );
+                $posts = $this->db->order_by("sequence", "ASC")->get_where("posts", $where)->result();
+                if (is_array($posts) && count($posts) > 0) {
+                ?>
+                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <?php
+                            $sl = 1;
+                            foreach ($posts as $p) {
+                                $ac = ($sl == 1) ? 'active' : null;
+                            ?>
+                                <div class="carousel-item <?= $ac; ?>" style="height: 200px;">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5 class="text-dark"><?= $p->post_title; ?></h5>
+                                        <div class="text-dark"><?= $p->description; ?></div>
+                                    </div>
+                                </div>
+                            <?php
+                                $sl++;
+                            }
+                            ?>
+                        </div>
+                        <a class="carousel-control-prev text-danger" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only1 text-danger">PREV</span>
+                        </a>
+                        <a class="carousel-control-next text-danger" href="#carouselExampleCaptions" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only1 text-danger">NEXT</span>
+                        </a>
+                    </div>
+                <?php
+                }
+                ?>
+
             </div>
         </div>
     </div>
